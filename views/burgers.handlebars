@@ -1,0 +1,39 @@
+<div class="row">
+  {{log burgersList}}
+  <div class="col-4 text-center">
+    <form>
+      <div class="form-group">
+        <h3>Add a burger</h3>
+        <input class="form-control" type="text" id="burger-input" placeholder="Create your burger here"/>
+        <button class="btn btn-block btn-success" id="submit-btn">Add Burger</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-4">
+    <h3>Burgers</h3>
+    <ul class="list-group">
+    {{#each burgersList}}
+      {{#unless devoured}}
+        <li class="list-group-item">
+          {{burger_name}} 
+          <button data-id="{{id}}" class="devour btn btn-info">Devour</button>
+          <button data-id="{{id}}" class="delete btn btn-danger"> X </button>
+        </li>
+      {{/unless}}
+    {{/each}}
+    </ul>
+  </div>
+  <div class="col-4">
+    <h3>Burgers - devoured</h3>
+    <ul class="list-group">
+      {{#each burgersList}}
+      {{#if devoured}}
+      <li class="list-group-item">
+        {{burger_name}}
+        <button data-id="{{id}}" class="delete btn btn-danger"> X </button>
+      </li>
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+</div>
