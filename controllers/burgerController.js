@@ -47,7 +47,7 @@ module.exports = {
   updateBurger: function (req, res) {
     // req.params => {id : 1} req.params.id => 1
     db
-      .query("UPDATE burgers SET devour = true WHERE id =?", [req.params.id], function (err, dbBurger) {
+      .query("UPDATE burgers SET devoured = true WHERE id =?", [req.params.id], function (err, dbBurger) {
         if (err) {
           console.log(err);
           return res
