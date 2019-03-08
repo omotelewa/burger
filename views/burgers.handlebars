@@ -13,7 +13,7 @@
     <h3>Burgers</h3>
     <ul class="list-group">
     {{#each burgersList}}
-      {{#unless devoured}}
+      {{#unless completed}}
         <li class="list-group-item">
           {{burger}} 
           <button data-id="{{id}}" class="devour btn btn-info">Devour</button>
@@ -27,7 +27,7 @@
     <h3>Burgers - devoured</h3>
     <ul class="list-group">
       {{#each burgersList}}
-      {{#if devoured}}
+      {{#if completed}}
       <li class="list-group-item">
         {{burger}}
         <button data-id="{{id}}" class="delete btn btn-danger"> X </button>
