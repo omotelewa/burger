@@ -5,7 +5,7 @@ $("#submit-btn").on("click", function (event) {
   $.ajax({
     url: "/api/burgers",
     method: "POST",
-    data: {"burger_name": $("#burger-input").val().trim()}
+    data: {"burger": $("#burger-input").val().trim()}
   })
   .then(()=>location.reload())
 })
