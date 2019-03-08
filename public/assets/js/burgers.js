@@ -1,7 +1,7 @@
 
 
 $("#submit-btn").on("click", function (event) {
-
+  event.preventDefault();
   $.ajax({
     url: "/api/burgers",
     method: "POST",
